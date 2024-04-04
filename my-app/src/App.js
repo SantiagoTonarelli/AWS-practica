@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 
 // const URL = "http://localhost:3000";
-const URL = "";
+const URL = "http://nodeapp-env.sdgdsfgdfgd.us-east-1.elasticbeanstalk.com";
 
 function App() {
   const [users, setUsers] = useState([]);

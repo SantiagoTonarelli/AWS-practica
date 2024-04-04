@@ -27,6 +27,7 @@ app.get("/registrar-usuario", async (req, res) => {
   const email = `${nombre.replace(" ", "").toLowerCase()}@gmail.com`;
 
   try {
+    console.log("Insertando usuario");
     const { rows } = await client.query(
       "INSERT INTO users(nombre, email) VALUES($1, $2) RETURNING *",
       [nombre, email]
@@ -40,6 +41,7 @@ app.get("/registrar-usuario", async (req, res) => {
 
 app.get("/usuarios", async (req, res) => {
   try {
+    console.log("Obteniendo usuarios");
     const { rows } = await client.query("SELECT * FROM users");
     res.status(200).json(rows);
   } catch (error) {
